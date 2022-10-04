@@ -51,7 +51,7 @@ function App() {
         filter={filter}
         setFilter={setFilter}
       />
-      <Postslist remove={removePost} posts={sortedAndSearchedPosts} title="Посты про JS"/>
+        <Postslist remove={removePost} posts={sortedAndSearchedPosts} title="Посты про JS"/>
     </div>
   );
 }

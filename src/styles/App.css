@@ -18,7 +18,7 @@ h1 {
     margin-bottom: 40px;
 }
 
-.posts-form {
+.postItem-form {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,7 +27,7 @@ h1 {
     margin-top: 40px;
 }
 
-.posts-form > input {
+.postItem-form > input {
     width: 600px;
     height: 40px;
     white-space: pre-wrap;
@@ -36,7 +36,26 @@ h1 {
     border: solid 2px red;
 }
 
-.posts-form > button {
+.postItem-form > button {
     width: 400px;
     height: 60px;
 }
+
+.postItem-enter {
+    transform: translateX(-350px);
+}
+
+.postItem-enter-active {
+    transform: translateX(350px);
+    transition: all 500ms ease-in;
+}
+
+.postItem-exit {
+    opacity: 1;
+}
+
+.postItem-exit-active {
+    transform: translateX(-350px);
+    transition: all 500ms ease-in;
+}
+  
