@@ -3,6 +3,8 @@ import "./styles/App.css";
 import { useMemo, useState } from "react";
 import PostForm from "./components/PostForm";
 import PostFilter from "./components/PostFilter";
+import MyModal from "./components/UI/MyModal/MyModal";
+import MyButton from "./components/UI/Button/MyButton";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -15,6 +17,7 @@ function App() {
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost])
+    setModal(false)
   }
 
   const removePost = (post) => {
@@ -34,10 +37,16 @@ function App() {
     return sortedPosts.filter(post => post.title.toLowerCase().includes(filter.query))
   }, [filter.query, sortedPosts])
 
+  const [modal, setModal] = useState(false)
+
   return (
     <div className="App">
-      <PostForm create={createPost}/>
-      <hr style={{margin: '15px 0'}} />
+      <MyButton style={{margin: "25px, 0"}} onClick={() => setModal(true)}>
+        Создать пост
+      </MyButton>
+      <MyModal visible={modal} setVisible={setModal}>
+        <PostForm create={createPost}/>
+      </MyModal>
       <PostFilter 
         filter={filter}
         setFilter={setFilter}
