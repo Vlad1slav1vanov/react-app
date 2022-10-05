@@ -58,4 +58,22 @@ h1 {
     transform: translateX(-350px);
     transition: all 500ms ease-in;
 }
+
+.page__wrapper {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: center;
+}
+
+.page {
+    padding: 10px;
+    border: solid 1px teal;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.page__current {
+    border: 2px solid red;
+    font-weight: bold;
+}
   
