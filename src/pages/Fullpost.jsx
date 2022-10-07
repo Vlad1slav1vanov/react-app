@@ -29,7 +29,7 @@ const Fullpost = () => {
             <h1>Cтраница поста с ID = {params.id}</h1>
             {isLoading
                 ? <Loader></Loader>
-                : <div><h2>{post.id}.{post.title}</h2><p>{post.body}</p></div>
+                : <div><h2>{post.title}</h2><p>{post.body}</p></div>
             }
             <h2>Комментарии к посту</h2>
             {
